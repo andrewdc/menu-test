@@ -7,9 +7,9 @@ let theTheme = theme.exaktime;
 
 let menuProps = {
    active: false,
-   swapi: false,
-   theTheme: theTheme
+   swapi: false
  } 
+
   function swap() {
     menuProps.swapi = !menuProps.swapi;
   }
@@ -90,7 +90,7 @@ let menuProps = {
         <div class="currentModuleContainer currentModuleWrapper" on:click={handleClick}>
           <div class="currentModuleName" >Current Module</div>
           <MenuIcon theTheme={theTheme} />
-          <div class="ddMenuContainer"><Menu {...menuProps}/></div>
+          <div class="ddMenuContainer"><Menu {...menuProps} theTheme={theTheme}/></div>
         </div>
 
       </div>
