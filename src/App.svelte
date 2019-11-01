@@ -1,5 +1,4 @@
 <script>
-  // import Button from "./Button.svelte";
   import Menu from "./Menu.svelte";
   import MenuIcon from "./MenuIcon.svelte";
   import theme from "./theme";
