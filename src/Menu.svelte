@@ -4,6 +4,7 @@
   import theme from "./theme";
   import apps from "./apps";
     
+    export let theTheme = theme.exaktime;
     export let active;
     export let swapi;
 
@@ -26,7 +27,6 @@ onMount(async()=> {
   function handleClick() {
     active = !active;
   }
-  let ddmenuTopSpacing = theme.exaktime.ddmenuTopSpacing;
 </script>
 
 <style>
@@ -94,7 +94,7 @@ onMount(async()=> {
   }
 </style>
 
-<menu class="menuContainer" style="--dd-menu-top-spacing:{ddmenuTopSpacing};">
+<menu class="menuContainer" style="{theTheme}">
 {#if swapi}
     {#if swapiData}
         <!-- promise was fulfilled -->

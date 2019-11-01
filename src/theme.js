@@ -1,31 +1,31 @@
 const theme = {
-    exaktime: {
-      mainBgColor: "#245b88",
-      iconSquareColor: "#ffffff",
-      mainTextColor: "#333333",
-      ddTextHoverColor: "#d8d8d8",
-      currentModuleTextColor: "#ffffff",
-      currentModuleWrapperHeight: "55px",
-      ddmenuTopSpacing: "12px"
-    },
-    ihr: {
-    mainBgColor: "#2d667b",
-    iconSquareColor: "#ffffff",
-    mainTextColor: "#ffffff",
-    ddTextHoverColor: "#d8d8d8",
-    currentModuleTextColor: "#ffffff",
-    currentModuleWrapperHeight: "70px",
-    ddmenuTopSpacing: "48px"
-  },
-  birddog: {
-    mainBgColor: "#ffffff",
-    iconSquareColor: "#98999B",
-    mainTextColor: "#333333",
-    ddTextHoverColor: "#d8d8d8",
-    currentModuleTextColor: "#2a8fc1",
-    currentModuleWrapperHeight: "60px",
-    ddmenuTopSpacing: "43px"
-  }
+  exaktime: `
+  --main-bg-color: #245b88;
+  --icon-square-color: #ffffff;
+  --main-text-color: #333333;
+  --dd-text-hover-color: #d8d8d8;
+  --currentModule-text-color: #ffffff;
+  --currentModule-wrapper-height: 55px;
+  --dd-menu-top-spacing: 12px;
+  `,
+    ihr:`  
+    --main-bg-color: #2d667b;
+    --icon-square-color: #ffffff;
+    --main-text-color: #ffffff;
+    --dd-text-hover-color: #d8d8d8;
+    --currentModule-text-color: #ffffff;
+    --currentModule-wrapper-height: 70px;
+    --dd-menu-top-spacing: 48px;`
+  ,
+  birddog:`
+  --main-bg-color: #ffffff;
+  --icon-square-color: #98999B;
+  --main-text-color: #333333;
+  --dd-text-hover-color: #d8d8d8;
+  --currentModule-text-color: #2a8fc1;
+  --currentModule-wrapper-height: 60px;
+  --dd-menu-top-spacing: 43px;
+`
 };
 
 export default theme;

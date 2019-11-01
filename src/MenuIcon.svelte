@@ -1,7 +1,6 @@
 <script>
   import theme from "./theme";
-  let mainBgColor = theme.exaktime.mainBgColor;
-  let iconSquareColor = theme.exaktime.iconSquareColor;
+  export let theTheme = theme.exaktime;
 </script>
 <style>
   .sqWrapper {
@@ -18,7 +17,7 @@
   }
 </style>
 
-<menuicon style="--main-bg-color:{mainBgColor};--icon-square-color:{iconSquareColor}">
+<menuicon style={theTheme}>
 <div class="sqWrapper">
 	<div>
 		<div class="sqColor">&nbsp;</div>

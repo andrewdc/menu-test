@@ -4,27 +4,19 @@
   import MenuIcon from "./MenuIcon.svelte";
   import theme from "./theme";
 
-  // let show = false;
-  // let swapi = false;
- let menuProps = {
+let theTheme = theme.exaktime;
+
+let menuProps = {
    active: false,
    swapi: false,
+   theTheme: theTheme
  } 
-
   function swap() {
     menuProps.swapi = !menuProps.swapi;
   }
   function handleClick() {
     menuProps.active = !menuProps.active;
   }
-
-  let mainBgColor = theme.exaktime.mainBgColor;
-  let iconSquareColor = theme.exaktime.iconSquareColor;
-  let mainTextColor = theme.exaktime.mainTextColor;
-  let ddTextHoverColor = theme.exaktime.ddTextHoverColor;
-  let currentModuleTextColor = theme.exaktime.currentModuleTextColor;
-  let currentModuleWrapperHeight = theme.exaktime.currentModuleWrapperHeight;
-  let ddmenuTopSpacing = theme.exaktime.ddmenuTopSpacing;
 </script>
 
 <style>
@@ -81,7 +73,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
     padding: 24px;
-    width: 225px;
+    width: 295px;
     margin-left: 50px;
     z-index: 999;
   }
@@ -89,15 +81,7 @@
     padding: 10px;
   }
 </style>
-
-<main style="--main-bg-color:{mainBgColor};
---main-text-color:{mainTextColor}; 
---currentModule-text-color:{currentModuleTextColor};
---icon-square-color:{iconSquareColor};
---currentModule-wrapper-height:{currentModuleWrapperHeight};
---dd-menu-top-spacing:{ddmenuTopSpacing};
-">
-<!-- style="--main-bg-color:{mainBgColor}" -->
+<main style="{theTheme}">
   <div class="headerContainer">
       <div class="headerCell"></div>
       <div class="headerCell"></div>      
@@ -106,7 +90,7 @@
 
         <div class="currentModuleContainer currentModuleWrapper" on:click={handleClick}>
           <div class="currentModuleName" >Current Module</div>
-          <MenuIcon />
+          <MenuIcon theTheme={theTheme} />
           <div class="ddMenuContainer"><Menu {...menuProps}/></div>
         </div>
 
@@ -114,9 +98,9 @@
     </div>
 
 <div class="toolbar">
-  <button value="exaktime">ExakTime</button>
-  <button value="infinity">Infinity</button>
-  <button value="birddog">BirdDog</button>
+  <button value="exaktime"  on:click="{() => theTheme = theme.exaktime}">ExakTime</button>
+  <button value="infinity"  on:click="{() => theTheme = theme.ihr}">Infinity</button>
+  <button value="birddog"  on:click="{() => theTheme = theme.birddog}">BirdDog</button>
   <button on:click="{swap}">Switch Data</button>
 </div>
 </main>
