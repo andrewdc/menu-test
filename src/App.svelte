@@ -3,8 +3,12 @@
   import Menu from "./Menu.svelte";
   import MenuIcon from "./MenuIcon.svelte";
   import theme from "./theme";
-  let show = false;
 
+  let show = false;
+  let swapi = false;
+  function swap() {
+    swapi = !swapi;
+  }
   function handleClick() {
     show = !show;
   }
@@ -98,7 +102,7 @@
         <div class="currentModuleContainer currentModuleWrapper" on:click={handleClick}>
           <div class="currentModuleName" >Current Module</div>
           <MenuIcon />
-          <div class="ddMenuContainer"><Menu active={show}/></div>
+          <div class="ddMenuContainer"><Menu active={show} swapi={swapi}/></div>
         </div>
 
       </div>
@@ -108,5 +112,6 @@
   <button value="exaktime">ExakTime</button>
   <button value="infinity">Infinity</button>
   <button value="birddog">BirdDog</button>
+  <button on:click="{swap}">Switch Data</button>
 </div>
 </main>

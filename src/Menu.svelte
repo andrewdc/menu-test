@@ -1,38 +1,28 @@
 <script>
   export let active = false;
+  import { onMount } from 'svelte';
   import theme from "./theme";
+  import apps from "./apps";
+  export let swapi;
+//get dummy hardcoded data 
+ let data = apps;
 
+//get and store rest data
+let swapiData;
+onMount(async()=> {
+  const response = await fetch('https://swapi.co/api/films/')
+  const data = await response.json();
+  swapiData = data.results.slice(0, 3);
+});
+//choose data source
+  if (swapi) {
+    data = swapiData
+  } else {
+    data = apps;
+  }
   function handleClick() {
     active = !active;
   }
-  const apps = [
-    {
-      name: "HR Management",
-      links: [
-        { name: "Core HR", url: "http://starwars.com" },
-        { name: "Time & Attendance", url: "http://google.com" }
-      ]
-    },
-    {
-      name: "Recruiting",
-      links: [
-        { name: "Applicant Tracking", url: "http://starwars.com" },
-        { name: "Onboarding", url: "http://google.com" }
-      ]
-    },
-    {
-      name: "Learning and Development",
-      links: [
-        { name: "Learning Management", url: "http://starwars.com" },
-        { name: "Performance", url: "http://google.com" },
-        { name: "Succession", url: "http://google.com" },
-        { name: "Collaboration", url: "http://google.com" },
-        { name: "Knowledge base", url: "http://google.com" },
-        { name: "Dashboard", url: "http://google.com" }
-      ]
-    }
-  ];
-
   let ddmenuTopSpacing = theme.exaktime.ddmenuTopSpacing;
 </script>
 
@@ -102,20 +92,47 @@
 </style>
 
 <menu class="menuContainer" style="--dd-menu-top-spacing:{ddmenuTopSpacing};">
-<ul id="menu" class="appsList ddMenu" class:active>
-  {#each apps as {name, links}}
-    <li>
-    <div class="ddMenuSubheader">
-      {name}
-    </div>
-    <ul class="appLinks">
-    {#each links as {name, url}}
-      <li>
-        <a href="{url}">{name}</a>
-      </li>
-    {/each}
+{#if swapi}
+    {#if swapiData}
+        <!-- promise was fulfilled -->
+        <ul id="menu" class="appsList ddMenu" class:active>
+        {#each swapiData as film}
+          <li>
+          <div class="ddMenuSubheader">
+            {film.title}
+          </div>
+          <ul class="appLinks">
+          {#each film.planets as planet}
+            <li>
+              <a href="{planet}">{planet}</a>
+            </li>
+          {/each}
+          </ul>
+          </li>
+        {/each}
+      </ul>
+    {:else}
+      <!-- promise is pending -->
+        <ul id="menu" class="appsList ddMenu" class:active>
+          <li>Loading apps...</li>
+        </ul>
+    {/if}
+{:else}
+    <ul id="menu" class="appsList ddMenu" class:active>
+      {#each data as app}
+        <li>
+        <div class="ddMenuSubheader">
+          {app.name}
+        </div>
+        <ul class="appLinks">
+        {#each app.links as {name, url}}
+          <li>
+            <a href="{url}">{name}</a>
+          </li>
+        {/each}
+        </ul>
+        </li>
+      {/each}
     </ul>
-    </li>
-  {/each}
-</ul>
+{/if}
 </menu>

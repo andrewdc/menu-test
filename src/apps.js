@@ -2,7 +2,7 @@
 This is a concept of the data model we might get back from
 a service that verifies the user access, and returns app links etc.
 */
-const apps = [
+let apps = [
   {
     name: "HR Management",
     links: [
