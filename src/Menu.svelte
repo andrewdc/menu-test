@@ -1,9 +1,12 @@
 <script>
-  export let active = false;
+
   import { onMount } from 'svelte';
   import theme from "./theme";
   import apps from "./apps";
-  export let swapi;
+    
+    export let active;
+    export let swapi;
+
 //get dummy hardcoded data 
  let data = apps;
 

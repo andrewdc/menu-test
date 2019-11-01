@@ -4,13 +4,18 @@
   import MenuIcon from "./MenuIcon.svelte";
   import theme from "./theme";
 
-  let show = false;
-  let swapi = false;
+  // let show = false;
+  // let swapi = false;
+ let menuProps = {
+   active: false,
+   swapi: false,
+ } 
+
   function swap() {
-    swapi = !swapi;
+    menuProps.swapi = !menuProps.swapi;
   }
   function handleClick() {
-    show = !show;
+    menuProps.active = !menuProps.active;
   }
 
   let mainBgColor = theme.exaktime.mainBgColor;
@@ -102,7 +107,7 @@
         <div class="currentModuleContainer currentModuleWrapper" on:click={handleClick}>
           <div class="currentModuleName" >Current Module</div>
           <MenuIcon />
-          <div class="ddMenuContainer"><Menu active={show} swapi={swapi}/></div>
+          <div class="ddMenuContainer"><Menu {...menuProps}/></div>
         </div>
 
       </div>
