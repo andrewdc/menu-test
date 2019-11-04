@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import theme from "./theme";
   import apps from "./apps";
+  import Icon from "./Icon.svelte";
     
     export let theTheme = theme.exaktime;
     export let active;
@@ -128,7 +129,12 @@ onMount(async()=> {
       {#each data as app}
         <li class:no-access={app.noAccess}>
         <div class="ddMenuSubheader" >
-          {app.name}
+          {app.name} 
+          {#if app.noAccess}
+            <Icon color="red" size="16px">
+                not_interested
+            </Icon>
+            {/if}
         </div>
         <ul class="appLinks">
         {#each app.links as {name, url}}

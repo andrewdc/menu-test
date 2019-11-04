@@ -25,6 +25,7 @@ let menuProps = {
     margin: 0px;
     padding: 0px;
   }
+
   .headerContainer {
     display: flex;
     width: 100%;
