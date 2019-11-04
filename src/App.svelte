@@ -79,6 +79,14 @@ let menuProps = {
   }
   .toolbar button {
     padding: 10px;
+    background:var(--main-bg-color);
+    color: var(--currentModule-text-color);
+    border-radius:4px;
+     transition:all 0.1s ease-in-out;
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 </style>
 <main style="{theTheme}">

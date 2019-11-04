@@ -17,6 +17,7 @@ export let size = '';
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  vertical-align: middle;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
