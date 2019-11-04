@@ -96,6 +96,13 @@ onMount(async()=> {
   .no-access {
     opacity:0.5;
   }
+  .no-access li:hover{
+    background: white;
+    cursor: context-menu;
+  }
+  .no-access ul:hover{
+    cursor: context-menu;
+  }
 </style>
 
 <menu class="menuContainer" style="{theTheme}">
