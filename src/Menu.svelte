@@ -92,6 +92,9 @@ onMount(async()=> {
     display: block;
     color: #333;
   }
+  .no-access {
+    opacity:0.5;
+  }
 </style>
 
 <menu class="menuContainer" style="{theTheme}">
@@ -123,14 +126,18 @@ onMount(async()=> {
 {:else}
     <ul id="menu" class="appsList ddMenu" class:active>
       {#each data as app}
-        <li>
-        <div class="ddMenuSubheader">
+        <li class:no-access={app.noAccess}>
+        <div class="ddMenuSubheader" >
           {app.name}
         </div>
         <ul class="appLinks">
         {#each app.links as {name, url}}
           <li>
+          {#if app.noAccess}
+            <span>{name}</span>
+          {:else}
             <a href="{url}">{name}</a>
+          {/if}
           </li>
         {/each}
         </ul>

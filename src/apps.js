@@ -12,6 +12,7 @@ let apps = [
   },
   {
     name: "Recruiting",
+    noAccess: true,
     links: [
       { name: "Applicant Tracking", url: "http://starwars.com" },
       { name: "Onboarding", url: "http://google.com" }
