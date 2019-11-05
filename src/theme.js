@@ -15,7 +15,7 @@ const theme = {
     --dd-text-hover-color: #d8d8d8;
     --currentModule-text-color: #ffffff;
     --currentModule-wrapper-height: 70px;
-    --dd-menu-top-spacing: 48px;`
+    --dd-menu-top-spacing: 19px;`
   ,
   birddog:`
   --main-bg-color: #ffffff;
@@ -24,7 +24,7 @@ const theme = {
   --dd-text-hover-color: #d8d8d8;
   --currentModule-text-color: #2a8fc1;
   --currentModule-wrapper-height: 60px;
-  --dd-menu-top-spacing: 43px;
+  --dd-menu-top-spacing: 15px;
 `
 };
 

@@ -4,6 +4,10 @@ export let size = '';
 
 </script>
 
+<svelte:head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</svelte:head>
+
 <style>
   .material-icons {
   font-family: 'Material Icons';

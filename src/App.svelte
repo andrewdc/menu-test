@@ -73,7 +73,7 @@ let menuProps = {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
     padding: 24px;
-    width: 295px;
+    width: 325px;
     margin-left: 50px;
     z-index: 999;
   }
