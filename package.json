@@ -20,7 +20,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "svelte": "^3.0.0"
+    "svelte": "^3.49.0"
   },
   "scripts": {
   "build": "rollup -c",
